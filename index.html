@@ -1,5 +1,4 @@
-
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -28,72 +27,68 @@
             background-color: var(--fondo-oscuro);
             color: var(--texto-principal);
             line-height: 1.6;
+            padding-bottom: 60px;
         }
 
-        /* Encabezado y Navegación */
         header {
-            background-color: #0b0b10;
+            background: rgba(18, 18, 24, 0.95);
             border-bottom: 2px solid var(--violeta-neon);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 15px 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(106, 27, 154, 0.3);
         }
 
-        .logo-box {
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
-        .logo-box .badge {
-            background: linear-gradient(135deg, var(--violeta-neon), var(--magenta-neon));
+        .badge-grupo {
+            background: var(--magenta-neon);
             color: white;
             font-weight: bold;
-            padding: 5px 10px;
+            padding: 4px 10px;
             border-radius: 6px;
-            font-size: 12px;
-            letter-spacing: 1px;
+            font-size: 0.85rem;
         }
 
-        .logo-title {
-            font-size: 22px;
+        .logo-text {
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--amarillo-neon);
-            text-shadow: 0 0 10px rgba(255, 234, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         nav {
             display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .nav-btn {
             background: transparent;
+            color: var(--texto-principal);
             border: 1px solid var(--violeta-neon);
-            color: white;
             padding: 8px 16px;
+            border-radius: 8px;
             cursor: pointer;
-            border-radius: 6px;
             font-weight: 600;
-            font-size: 14px;
             transition: all 0.3s ease;
         }
 
         .nav-btn:hover, .nav-btn.active {
-            background-color: var(--violeta-neon);
-            color: var(--amarillo-neon);
+            background: var(--violeta-neon);
+            color: white;
             box-shadow: 0 0 12px var(--violeta-neon);
-            border-color: var(--amarillo-neon);
         }
 
-        /* Contenedor Principal */
-        .main-container {
+        main {
             max-width: 1100px;
             margin: 30px auto;
             padding: 0 20px;
@@ -101,185 +96,124 @@
 
         .tab-content {
             display: none;
-            animation: fadeIn 0.4s ease-in-out;
         }
 
         .tab-content.active {
             display: block;
+            animation: fadeIn 0.4s ease-in-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero Banner */
         .hero-banner {
+            background: linear-gradient(135deg, rgba(106, 27, 154, 0.2), rgba(194, 24, 91, 0.2));
+            border: 1px solid var(--violeta-neon);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
             text-align: center;
-            padding: 50px 25px;
-            background: linear-gradient(135deg, rgba(106, 27, 154, 0.35), rgba(194, 24, 91, 0.35));
-            border-radius: 16px;
-            border: 1px solid var(--magenta-neon);
-            box-shadow: 0 0 25px rgba(194, 24, 91, 0.25);
-            margin-bottom: 35px;
         }
 
         .hero-banner h1 {
-            font-size: 38px;
             color: var(--amarillo-neon);
-            text-shadow: 0 0 15px rgba(255, 234, 0, 0.5);
-            margin-bottom: 12px;
-        }
-
-        .hero-banner p {
-            font-size: 17px;
-            max-width: 820px;
-            margin: 0 auto 25px auto;
-            color: #dcdce6;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
         }
 
         .btn-cta {
-            background: linear-gradient(90deg, var(--magenta-neon), #d81b60);
-            color: white;
-            padding: 12px 28px;
+            background: var(--amarillo-neon);
+            color: #000;
             border: none;
-            border-radius: 25px;
-            font-size: 15px;
+            padding: 12px 24px;
             font-weight: bold;
+            border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 0 15px rgba(194, 24, 91, 0.5);
-            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 15px;
+            font-size: 1rem;
         }
 
-        .btn-cta:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 25px var(--magenta-neon);
-        }
-
-        /* Tarjetas y Rejillas */
         .grid-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            margin: 20px 0;
+            margin-top: 20px;
         }
 
         .card {
-            background-color: var(--tarjeta-bg);
-            border-radius: 12px;
-            padding: 22px;
-            border: 1px solid #2e2e3e;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .card:hover {
-            border-color: var(--amarillo-neon);
-            transform: translateY(-4px);
+            background: var(--tarjeta-bg);
+            border: 1px solid var(--borde-glow);
+            border-radius: 10px;
+            padding: 20px;
         }
 
         .card h3 {
             color: var(--amarillo-neon);
             margin-bottom: 10px;
-            font-size: 18px;
         }
 
-        /* Simulador Interactivo RGB */
-        .sim-box {
-            background-color: var(--tarjeta-bg);
-            border: 2px solid var(--amarillo-neon);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 0 20px rgba(255, 234, 0, 0.15);
-            margin: 30px 0;
-        }
-
-        .sim-wheel-ring {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 8px dashed var(--magenta-neon);
-            margin: 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 16px;
-            transition: all 0.4s ease;
-            box-shadow: 0 0 15px rgba(194, 24, 91, 0.4);
-        }
-
-        .color-btns {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin: 15px 0;
-        }
-
-        .btn-color {
-            padding: 10px 18px;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-
-        .btn-color:hover {
-            opacity: 0.85;
-        }
-
-        /* Tablas */
-        table {
+        .card img {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #15151e;
+            height: 200px;
+            object-fit: cover;
             border-radius: 8px;
-            overflow: hidden;
+            margin-bottom: 12px;
+            border: 1px solid var(--violeta-neon);
         }
 
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #2a2a3a;
-            font-size: 14px;
+        /* Simulator Styles */
+        .simulator-box {
+            background: var(--tarjeta-bg);
+            border: 2px solid var(--violeta-neon);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
         }
 
-        th {
-            background-color: var(--violeta-neon);
-            color: var(--amarillo-neon);
+        .color-preview {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 15px auto;
+            border: 3px solid white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .sim-btn {
+            background: var(--magenta-neon);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin: 5px;
+            cursor: pointer;
             font-weight: bold;
         }
 
-        /* Código Python */
-        pre {
-            background-color: #0a0a0f;
+        .code-block {
+            background: #0a0a0f;
             border: 1px solid var(--violeta-neon);
-            padding: 18px;
-            border-radius: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            color: #00ffcc;
             overflow-x: auto;
-            color: #00ff66;
-            font-family: 'Consolas', 'Courier New', monospace;
-            font-size: 13px;
-            line-height: 1.5;
             margin-top: 15px;
+            white-space: pre-wrap;
         }
 
-        /* Video Frame */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            max-width: 100%;
-            background: #000;
-            border-radius: 12px;
-            border: 2px solid var(--magenta-neon);
-            margin: 20px 0;
-            box-shadow: 0 0 20px rgba(194, 24, 91, 0.3);
+            border-radius: 10px;
+            border: 1px solid var(--violeta-neon);
+            margin-top: 20px;
         }
 
         .video-container iframe {
@@ -290,46 +224,41 @@
             height: 100%;
         }
 
-        /* Formularios */
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
+        form label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
+            margin: 10px 0 5px;
             color: var(--amarillo-neon);
+            font-weight: 600;
         }
 
-        .form-control {
+        form input, form textarea {
             width: 100%;
             padding: 10px;
             border-radius: 6px;
-            border: 1px solid #3a3a4c;
-            background-color: #101018;
+            border: 1px solid var(--violeta-neon);
+            background: #0f0f15;
             color: white;
-            font-size: 14px;
+            margin-bottom: 10px;
         }
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            background-color: #08080c;
-            border-top: 1px solid #222;
-            margin-top: 50px;
-            color: #888;
-            font-size: 13px;
+        form button {
+            background: var(--amarillo-neon);
+            color: #000;
+            border: none;
+            padding: 12px 20px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVEGACIÓN PRINCIPAL -->
     <header>
-        <div class="logo-box">
-            <span class="badge">GRUPO 8</span>
-            <span class="logo-title">SpectroPark Dynamics</span>
+        <div class="logo-container">
+            <span class="badge-grupo">GRUPO 8</span>
+            <span class="logo-text">SpectroPark Dynamics</span>
         </div>
         <nav>
             <button class="nav-btn active" onclick="switchTab('inicio')">01. Inicio</button>
@@ -339,9 +268,8 @@
         </nav>
     </header>
 
-    <div class="main-container">
-
-        <!-- 01. PESTAÑA INICIO -->
+    <main>
+        <!-- 01. INICIO -->
         <section id="inicio" class="tab-content active">
             <div class="hero-banner">
                 <h1>SpectroPark Dynamics</h1>
@@ -349,252 +277,161 @@
                 <button class="btn-cta" onclick="switchTab('soluciones')">Ver Simulación en Vivo & Python</button>
             </div>
 
-            <h2>Estructuras del Parque Mecánico</h2>
+            <h2 style="color: var(--amarillo-neon); margin-bottom: 15px;">Estructuras del Parque Mecánico</h2>
             <div class="grid-cards">
                 <div class="card">
+                    <img src="foto 1.jpg" alt="Rueda de Chicago">
                     <h3>🎡 Rueda de Chicago</h3>
                     <p>Construida con paletas de madera multicolores y motor central de giro uniforme. Demuestra el movimiento circular continuo y la conversión de energía eléctrica a mecánica.</p>
                 </div>
                 <div class="card">
-                    <h3>🚀 Drop Tower (Torre de Caída)</h3>
-                    <p>Estructura en tubo de PVC naranja accionada por motor, poleas y faja dentada. Modela el movimiento rectilíneo vertical, trabajo y energía potencial gravitatoria.</p>
+                    <img src="foto 2.jpg" alt="Drop Tower y Elevador">
+                    <h3>🚀 Drop Tower & Elevador</h3>
+                    <p>Estructura en tubo de PVC naranja y elevador hidráulico accionado por jeringas. Modela energía potencial, caída libre y el Principio de Pascal.</p>
                 </div>
                 <div class="card">
-                    <h3>🕹️ Elevador Hidráulico</h3>
-                    <p>Mecanismo con jeringas comunicadas y fluido incompresible (agua). Aplica el Principio de Pascal para transmitir fuerza y elevar la plataforma con carga.</p>
-                </div>
-                <div class="card">
-                    <h3>📐 Rampa de Plano Inclinado</h3>
-                    <p>Pista inclinada junto a la taquilla del parque para el análisis conceptual del peso, la fuerza normal y los coeficientes de fricción.</p>
+                    <img src="foto 3.jpeg" alt="Maqueta Completa">
+                    <h3>📐 Vista General del Parque</h3>
+                    <p>Integración total del circuito con pista de plano inclinado, taquilla, iluminación decorativa y zona de prueba de sensores.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 02. PESTAÑA FILOSOFÍA INSTITUCIONAL -->
+        <!-- 02. FILOSOFÍA -->
         <section id="filosofia" class="tab-content">
-            <h2>Filosofía Institucional</h2>
-            <p><strong>Colegio Las Américas</strong> | Curso: Física Fundamental (Catedrático: Profe Ronny Esquivel)</p>
-            <br>
+            <div class="hero-banner">
+                <h1>Filosofía del Proyecto</h1>
+                <p>Colegio Las Américas | Curso de Física Fundamental | Catedrático: Prof. Ronny Esquivel</p>
+            </div>
             <div class="grid-cards">
                 <div class="card">
-                    <h3>Misión</h3>
-                    <p>Aplicar y comunicar los principios de la Física Fundamental mediante la construcción y el análisis de una maqueta de parque de diversiones, promoviendo la curiosidad científica, la creatividad y el trabajo en equipo.</p>
+                    <h3>🎯 Misión</h3>
+                    <p>Diseñar y construir maquetas mecánicas automatizadas que integren principios físicos, programación en Python y sensores ópticos, facilitando el aprendizaje interactivo y la demostración práctica en ferias científicas escolares.</p>
                 </div>
                 <div class="card">
-                    <h3>Visión</h3>
-                    <p>Fomentar el aprendizaje práctico de la física por medio de proyectos escolares que conecten la teoría con situaciones observables, motivando a explorar cómo funcionan los mecanismos mecánicos e hidráulicos.</p>
+                    <h3>🚀 Visión</h3>
+                    <p>Ser un referente de innovación estudiantil en el Colegio Las Américas, demostrando cómo la ingeniería física y el software mecatrónico transforman conceptos teóricos en atracciones automatizadas funcionales.</p>
+                </div>
+                <div class="card">
+                    <h3>⚡ Valores</h3>
+                    <p>Rigor Científico, Innovación Tecnológica, Trabajo en Equipo, Pensamiento Lógico y Trabajo con Pasión.</p>
                 </div>
             </div>
-
-            <h3 style="margin-top:25px; color: var(--amarillo-neon);">Alumnas Desarrolladoras</h3>
-            <ul>
-                <li><strong>Alisson Fabiola Cerna Avendaño</strong> (Décimo Grado, Sección B)</li>
-                <li><strong>Katherine Dayanna De Leon</strong> (Décimo Grado, Sección B)</li>
-            </ul>
-
-            <h3 style="margin-top:25px; color: var(--amarillo-neon);">Matriz de Impacto Sociocultural</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Ámbito</th>
-                        <th>Aplicación en el Proyecto</th>
-                        <th>Impacto Sociocultural</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Educativo</strong></td>
-                        <td>Demostración tangible de fuerza, presión, trabajo y potencia con material accesible.</td>
-                        <td>Facilita el aprendizaje visual de principios científicos complejos en el aula.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Industrial</strong></td>
-                        <td>Lógica de clasificación automatizada con sensores ópticos RGB en atracciones mecánicas.</td>
-                        <td>Entrena en conceptos de automatización industrial y robótica aplicada.</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="card" style="margin-top: 20px;">
+                <h3>👥 Integrantes del Equipo (Grupo 8)</h3>
+                <ul style="margin-left: 20px; margin-top: 10px; color: var(--amarillo-neon);">
+                    <li><strong>Alisson Cerna</strong> — Liderazgo de Proyecto, Diseño Mecánico & Estructuras</li>
+                    <li><strong>Katherine De Leon</strong> — Desarrollo del Modelo Físico & Documentación Técnica</li>
+                </ul>
+            </div>
         </section>
 
-        <!-- 03. PESTAÑA SOLUCIONES TECNOLÓGICAS & PYTHON -->
+        <!-- 03. SOLUCIONES & PYTHON -->
         <section id="soluciones" class="tab-content">
-            <h2>Módulo Técnico & Simulación Python (POO)</h2>
-            <p>Monitoreo digital simulado para detener la Rueda de Chicago en cabinas específicas según el color detectado por el sensor RGB.</p>
-
-            <!-- SIMULADOR INTERACTIVO -->
-            <div class="sim-box">
-                <h3 style="color:var(--amarillo-neon);">Simulador de Sensor RGB en Vivo</h3>
-                <p>Haz clic en un color para simular la detección del sensor y el frenado en la cabina de la Rueda de Chicago:</p>
-                
-                <div class="color-btns">
-                    <button class="btn-color" style="background:#FF1744; color:white;" onclick="simularDetencion('Rojo (#FF1744)', '#FF1744')">Sensor Rojo</button>
-                    <button class="btn-color" style="background:#00E676; color:black;" onclick="simularDetencion('Verde (#00E676)', '#00E676')">Sensor Verde</button>
-                    <button class="btn-color" style="background:#00B0FF; color:black;" onclick="simularDetencion('Azul (#00B0FF)', '#00B0FF')">Sensor Azul</button>
-                    <button class="btn-color" style="background:#FFEA00; color:black;" onclick="simularDetencion('Amarillo (#FFEA00)', '#FFEA00')">Sensor Amarillo</button>
-                </div>
-
-                <div id="wheelDisplay" class="sim-wheel-ring">GIRANDO...</div>
-                <p id="statusLog" style="font-size:14px; color:#aaa;">Estado: Rueda de Chicago girando en ciclo normal.</p>
-
-                <h4 style="margin-top:20px; color:var(--magenta-neon);">Contador de Cabinas Clasificadas</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Color RGB</th>
-                            <th>Conteo de Detecciones</th>
-                            <th>Acción de Frenado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Rojo</td>
-                            <td id="cnt-rojo">0</td>
-                            <td>Detención en Cabina 1</td>
-                        </tr>
-                        <tr>
-                            <td>Verde</td>
-                            <td id="cnt-verde">0</td>
-                            <td>Detención en Cabina 2</td>
-                        </tr>
-                        <tr>
-                            <td>Azul</td>
-                            <td id="cnt-azul">0</td>
-                            <td>Detención en Cabina 3</td>
-                        </tr>
-                        <tr>
-                            <td>Amarillo</td>
-                            <td id="cnt-amarillo">0</td>
-                            <td>Detención en Cabina 4</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="hero-banner">
+                <h1>Simulador de Sensor RGB & Control Python</h1>
+                <p>Detección de espectro de color en vagonetas para parada automatizada de emergencia.</p>
             </div>
 
-            <!-- CÓDIGO PYTHON POO -->
-            <h3>Código Fuente en Python (Programación Orientada a Objetos)</h3>
-            <pre><code># SpectroPark Dynamics - Módulo de Control de Rueda de Chicago
-# Integración de Clases POO para Sensores RGB y Motores
+            <div class="simulator-box">
+                <h2>🎛️ Simulador Interactivo de Sensor de Color RGB</h2>
+                <p>Presiona los botones para simular el paso de una vagoneta detectada por el sensor TCS3200:</p>
+                
+                <div class="color-preview" id="preview" style="background-color: #555;"></div>
+                <p id="status-text" style="font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">Estado: Esperando objeto...</p>
 
+                <button class="sim-btn" style="background: #e74c3c;" onclick="simularColor('rojo', '#e74c3c')">🔴 Vagoneta Roja (Alto)</button>
+                <button class="sim-btn" style="background: #2ecc71;" onclick="simularColor('verde', '#2ecc71')">🟢 Vagoneta Verde (Paso)</button>
+                <button class="sim-btn" style="background: #3498db;" onclick="simularColor('azul', '#3498db')">🔵 Vagoneta Azul (Velocidad Media)</button>
+            </div>
+
+            <h2 style="color: var(--amarillo-neon); margin-top: 30px;">🐍 Lógica de Control en Python (POO)</h2>
+            <div class="code-block">
 class SensorRGB:
-    def __init__(self, pin_sensor=12):
-        self.pin = pin_sensor
+    def __init__(self, pin_r, pin_g, pin_b):
+        self.pin_r = pin_r
+        self.pin_g = pin_g
+        self.pin_b = pin_b
 
-    def detectar_color(self, codigo_hex):
-        print(f"[Sensor RGB]: Leyendo señal en pin {self.pin} -> Color: {codigo_hex}")
-        return codigo_hex
+    def leer_color(self, r, g, b):
+        if r > 200 and g < 50 and b < 50:
+            return "ROJO - PARADA DE EMERGENCIA"
+        elif g > 200 and r < 50 and b < 50:
+            return "VERDE - OPERACION NORMAL"
+        elif b > 200 and r < 50 and g < 50:
+            return "AZUL - MANTENIMIENTO / MODO LENTO"
+        return "DESCONOCIDO"
 
-class MotorPasoAPaso:
-    def __init__(self, puerto_control="MOT_1"):
-        self.puerto = puerto_control
-        self.en_movimiento = True
+# Ejemplo de ejecución
+sensor = SensorRGB(pin_r=17, pin_g=27, pin_b=22)
+print("Detección Vagoneta:", sensor.leer_color(220, 15, 10))
+            </div>
 
-    def detener_en_cabina(self):
-        self.en_movimiento = False
-        print(f"[Motor {self.puerto}]: Frenado electromagnético activado correctamente.")
-
-    def reanudar_giro(self):
-        self.en_movimiento = True
-        print(f"[Motor {self.puerto}]: Reanudando giro continuo.")
-
-class RuedaChicago:
-    def __init__(self):
-        self.sensor = SensorRGB()
-        self.motor = MotorPasoAPaso()
-
-    def procesar_cabina_color(self, hex_color):
-        color = self.sensor.detectar_color(hex_color)
-        if color:
-            self.motor.detener_en_cabina()
-            return f"Rueda alineada y detenida para el color {color}"
-
-# Ejecución de prueba
-parque = RuedaChicago()
-resultado = parque.procesar_cabina_color("#FFEA00")
-print(resultado)
-            </code></pre>
-
-            <h3 style="margin-top:30px;">Demostración en Video del Prototipo</h3>
+            <h2 style="color: var(--amarillo-neon); margin-top: 30px;">📹 Video Demostrativo</h2>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/9Hqz21I9skI" title="Demostración Rueda de Chicago - Física Fundamental" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demostración Maqueta SpectroPark" frameborder="0" allowfullscreen></iframe>
             </div>
         </section>
 
-        <!-- 04. PESTAÑA CONTACTO -->
+        <!-- 04. CONTACTO -->
         <section id="contacto" class="tab-content">
-            <h2>Centro de Contacto & Soporte</h2>
-            <p>Atención al jurado calificador y consultas técnicas de la Feria Científica.</p>
+            <div class="hero-banner">
+                <h1>Centro de Contacto & Soporte</h1>
+                <p>Atención al jurado calificador y consultas técnicas de la Feria Científica.</p>
+            </div>
 
             <div class="grid-cards">
                 <div class="card">
                     <h3>Formulario para el Jurado</h3>
-                    <form onsubmit="event.preventDefault(); alert('¡Gracias! Su mensaje ha sido enviado a Katushcadl@gmail.com');">
-                        <div class="form-group">
-                            <label>Nombre / Evaluación Jurado:</label>
-                            <input type="text" class="form-control" placeholder="Ej. Prof. Evaluador" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Correo de Contacto:</label>
-                            <input type="email" class="form-control" placeholder="Katushcadl@gmail.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Comentario o Calificación:</label>
-                            <textarea class="form-control" rows="3" placeholder="Escriba sus observaciones sobre la maqueta..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-cta">Enviar a Katushcadl@gmail.com</button>
+                    <form onsubmit="alert('¡Gracias por sus observaciones!'); return false;">
+                        <label>Nombre / Evaluación Jurado:</label>
+                        <input type="text" placeholder="Ej. Prof. Evaluador" required>
+                        <label>Correo de Contacto:</label>
+                        <input type="email" value="Katushcadl@gmail.com" required>
+                        <label>Comentario o Calificación:</label>
+                        <textarea rows="4" placeholder="Escriba sus observaciones sobre la maqueta..."></textarea>
+                        <button type="submit">Enviar Evaluación</button>
                     </form>
                 </div>
 
                 <div class="card">
                     <h3>Preguntas Frecuentes (FAQ)</h3>
-                    <p><strong>1. ¿Cómo funciona el elevador hidráulico?</strong><br>Aplica el Principio de Pascal: al presionar una jeringa, la presión se transmite íntegramente por el agua elevando la segunda jeringa.</p>
-                    <p style="margin-top:10px;"><strong>2. ¿Qué relación tiene con Python?</strong><br>El software modela la simulación de detención automática del motor al detectar marcas cromáticas RGB en las cabinas.</p>
+                    <p style="margin-bottom: 15px;"><strong>1. ¿Cómo funciona el elevador hidráulico?</strong><br>Aplica el Principio de Pascal: al presionar una jeringa, la presión se transmite íntegramente por el agua elevando la segunda jeringa.</p>
+                    <p style="margin-bottom: 15px;"><strong>2. ¿Qué relación tiene con Python?</strong><br>El software modela la lectura óptica de sensores RGB para controlar el encendido y paro automático de los motores de la Rueda de Chicago.</p>
+                    <p><strong>3. ¿Dónde consultar la documentación completa?</strong><br>En el PDF impreso entregado al jurado en el stand de la feria.</p>
                 </div>
             </div>
         </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 SpectroPark Dynamics | Colegio Las Américas - Décimo Grado B</p>
-        <p>Alisson Cerna & Katherine De Leon | Catedrático: Ronny Esquivel</p>
-    </footer>
+    </main>
 
     <script>
-        // Lógica de pestañas navegables
         function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            const tabs = document.querySelectorAll('.tab-content');
+            const btns = document.querySelectorAll('.nav-btn');
             
+            tabs.forEach(tab => tab.classList.remove('active'));
+            btns.forEach(btn => btn.classList.remove('active'));
+
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
         }
 
-        // Contador de clasificaciones
-        const conteos = { rojo: 0, verde: 0, azul: 0, amarillo: 0 };
-
-        function simularDetencion(nombreColor, hexColor) {
-            const display = document.getElementById('wheelDisplay');
-            const status = document.getElementById('statusLog');
+        function simularColor(nombreColor, hex) {
+            const preview = document.getElementById('preview');
+            const status = document.getElementById('status-text');
             
-            display.style.borderColor = hexColor;
-            display.style.boxShadow = `0 0 25px ${hexColor}`;
-            display.style.color = hexColor;
-            display.innerText = "¡DETENIDO!";
+            preview.style.backgroundColor = hex;
             
-            status.innerText = `[ALERTA SENSOR RGB]: Detección de ${nombreColor}. Frena motor central para alineación de cabina...`;
-
-            if (nombreColor.includes('Rojo')) { conteos.rojo++; document.getElementById('cnt-rojo').innerText = conteos.rojo; }
-            if (nombreColor.includes('Verde')) { conteos.verde++; document.getElementById('cnt-verde').innerText = conteos.verde; }
-            if (nombreColor.includes('Azul')) { conteos.azul++; document.getElementById('cnt-azul').innerText = conteos.azul; }
-            if (nombreColor.includes('Amarillo')) { conteos.amarillo++; document.getElementById('cnt-amarillo').innerText = conteos.amarillo; }
-
-            setTimeout(() => {
-                display.innerText = "GIRANDO...";
-                display.style.color = "white";
-                display.style.borderColor = "var(--magenta-neon)";
-                display.style.boxShadow = "0 0 15px rgba(194, 24, 91, 0.4)";
-                status.innerText = "Estado: Rueda de Chicago reanudando giro constante.";
-            }, 3000);
+            if(nombreColor === 'rojo') {
+                status.innerText = "🔴 ¡ALERTA! Vagoneta Roja: Sistema frenado por seguridad.";
+                status.style.color = "#e74c3c";
+            } else if(nombreColor === 'verde') {
+                status.innerText = "🟢 Vagoneta Verde: Giro continuo normal de la Rueda.";
+                status.style.color = "#2ecc71";
+            } else if(nombreColor === 'azul') {
+                status.innerText = "🔵 Vagoneta Azul: Modo reducción de velocidad activado.";
+                status.style.color = "#3498db";
+            }
         }
     </script>
 </body>
